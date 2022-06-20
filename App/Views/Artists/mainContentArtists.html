@@ -1,0 +1,73 @@
+
+
+<div class="entityInfo borderBottom">
+    
+        <div class="centerSection">
+    
+            <div class="artistInfo">
+    
+                <h1 class="artistName">{{ artist }}</h1>
+    
+                <div class="headerButtons">
+                    <button class="button green">PLAY</button>
+                </div>
+    
+            </div>
+    
+        </div>
+    
+</div>
+
+<div class="tracklistContainer borderBottom">
+    <h2>SONGS</h2>
+    <ul class="tracklist">
+
+
+        {% for key, song in songs %}
+
+        <li class='tracklistRow'>
+            <div class='trackCount'>
+                <img class='play' src='/img/icons/play-white.png' onclick="setTrack('{{ song.id }}', JSON.parse('{{idsAlbum}}'), true)">
+                <span class='trackNumber'>{{ song.key }}</span>
+            </div>
+
+
+            <div class='trackInfo'>
+                <span class='trackName'>{{ song.name }}</span>
+                <span class='artistName'>{{ song.artist }}</span>
+            </div>
+
+            <div class='trackOptions'>
+                <img class='optionsButton' src='/img/icons/more.png'>
+            </div>
+
+            <div class='trackDuration'>
+                <span class='duration'>{{ song.duration }}</span>
+            </div>
+        </li>
+        {% endfor %}
+
+    </ul>
+
+</div>
+
+<div class="gridViewContainer">
+    <h2>ALBUMS</h2>
+
+    {% for album in albums %}
+
+    <div class='gridViewItem'>
+
+        <a href="/albums/show/{{ album.id }}">
+            <img src="{{ album.artworkPath }}">
+
+            <div class='gridViewInfo'>
+                {{ album.title }}
+            </div>
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+</div>

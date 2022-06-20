@@ -1,0 +1,47 @@
+
+
+<div class="entityInfo">
+    
+        <div class="leftSection">
+            <img src="{{ artwork }}">
+        </div>
+    
+        <div class="rightSection">
+            <h2>{{ albumTitle}}</h2>
+            <p>{{ artist }}</p>
+            <p>{{ number }} songs</p>
+    
+        </div>
+    
+    </div>
+    
+    <div class="tracklistContainer">
+        <ul class="tracklist">
+    
+            {% for key, song in songs %}
+    
+            <li class='tracklistRow'>
+                <div class='trackCount'>
+                    <img class='play' src='/img/icons/play-white.png' onclick="setTrack('{{ song.id }}', JSON.parse('{{idsAlbum}}'), true)">
+                    <span class='trackNumber'>{{ song.key }}</span>
+                </div>
+    
+    
+                <div class='trackInfo'>
+                    <span class='trackName'>{{ song.name }}</span>
+                    <span class='artistName'>{{ song.artist }}</span>
+                </div>
+    
+                <div class='trackOptions'>
+                    <img class='optionsButton' src='/img/icons/more.png'>
+                </div>
+    
+                <div class='trackDuration'>
+                    <span class='duration'>{{ song.duration }}</span>
+                </div>
+            </li>
+            {% endfor %}
+    
+        </ul>
+    
+    </div>

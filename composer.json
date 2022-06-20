@@ -1,0 +1,13 @@
+{
+    "require": {
+        "twig/twig": "^2.0",
+        "respect/validation": "^2.2",
+        "voku/anti-xss": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+             "Core\\": "Core/",
+             "App\\": "App/"
+        }
+    }
+}

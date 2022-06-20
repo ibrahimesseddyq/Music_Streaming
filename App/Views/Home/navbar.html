@@ -1,0 +1,51 @@
+<div id="navBarContainer">
+    <nav class="navBar">
+
+        <a href="/" class="logo">
+            <img src="/img/icons/logo.png">
+        </a>
+
+
+        <div class="group">
+
+            <div class="navItem">
+                <a href="/public/search" class="navItemLink search">Search
+                    <img src="/public/img/icons/search.png" class="icon" alt="Search">
+                </a>
+            </div>
+
+        </div>
+
+        <div class="group">
+            <div class="navItem">
+                Welcome  <pre></pre>{{ userlogged}}
+            </div>
+ 
+            {% if not userlogged %}
+            <div class="navItem">
+                <a href="/login/create" class="navItemLink">Login</a>
+            </div>
+            {% endif %}
+            {% if not uploadpage %}
+            <div class="navItem">
+                <a href="/upload/ufile" class="navItemLink">Upload</a>
+            </div>
+            {% endif %}
+
+            {% if userlogged %}
+            {% if not myalbum %}
+
+            <div class="navItem">
+                <a href="/albums/list" class="navItemLink">My Albums</a>
+            </div>
+            {% endif %}
+
+            <div class="navItem">
+                <a href="/home/logout" class="navItemLink">Log out</a>
+            </div>
+            {% endif %}
+
+        </div>
+
+    </nav>
+</div>
